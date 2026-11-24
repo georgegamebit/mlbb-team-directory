@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="description" content="MLBB team and player directory">
+  <title>MLBB Team Directory</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="MLBB Team Directory home">
+        <span class="brand-mark">M</span>
+        <span>MLBB <span class="brand-muted">DIRECTORY</span></span>
+      </a>
+      <span class="live-label"><span class="live-dot"></span> PLAYER DATABASE</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">MOBA LEGENDS 5V5</p>
+      <h1>Find your <span>opponent.</span></h1>
+      <p class="hero-copy">Browse registered teams, check player details, and copy IDs in one click.</p>
+      <div class="stats" aria-label="Directory statistics">
+        <div class="stat"><strong id="team-count">0</strong><span>TEAMS</span></div>
+        <div class="stat"><strong id="player-count">0</strong><span>PLAYERS</span></div>
+        <div class="stat"><strong>6</strong><span>ROSTER SLOTS</span></div>
+      </div>
+    </section>
+
+    <section class="directory" aria-labelledby="directory-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">DATABASE</p>
+          <h2 id="directory-title">Team directory</h2>
+        </div>
+        <span class="result-count" id="result-count">0 teams</span>
+      </div>
+
+      <div class="toolbar">
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m16 16 4 4"></path></svg>
+          <input id="search" type="search" placeholder="Search team, player, Discord, ID or role..." autocomplete="off">
+          <kbd>/</kbd>
+        </label>
+        <select id="role-filter" aria-label="Filter by player role">
+          <option value="">All roles</option>
+          <option value="exp">EXP</option>
+          <option value="jungler">Jungler</option>
+          <option value="mid">Mid</option>
+          <option value="gold">Gold</option>
+          <option value="roamer">Roamer</option>
+        </select>
+      </div>
+
+      <div id="team-list" class="team-list" aria-live="polite"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <span class="empty-icon">⌕</span>
+        <h3>No teams found</h3>
+        <p>Try another team name, player name, ID, or role.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span>MLBB TEAM DIRECTORY</span>
+      <span>Player information shown as supplied in the source roster.</span>
+    </footer>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
